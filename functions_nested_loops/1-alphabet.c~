@@ -1,0 +1,14 @@
+#include "main.h"
+/*
+ *print_alphabet - Prints alphabet
+ *
+ *
+ */
+void print_aplhabet(void)
+{
+int  c;
+for (c = 97;c <= 122; c++)
+{
+_putchar(c);
+}
+}

@@ -1,4 +1,4 @@
-#unclude " main.h"
+#include "main.h"
 /*
  *
  *
@@ -9,7 +9,7 @@
 void print_alphabet(void)
 {
   int c;
-  for(c = 97;c <= 122; 12; c++)
+  for(c = 'a'; c <= 'z'; c++)
     {
       _putchar(c);
     }

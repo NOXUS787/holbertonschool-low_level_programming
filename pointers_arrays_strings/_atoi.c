@@ -2,33 +2,40 @@
 
 /**
  * _atoi - Converts a string to an integer.
- * @s: The string to convert
+ * @s: The string to convert.
  *
- * Return: The converted integer
+ * Return: The integer value of the string.
  */
 int _atoi(char *s)
 {
-	long result = 0;
-	int sign = 1;
+    long result = 0;
+    int sign = 1;
 
-	while (*s)
-	{
-		if (*s == '-')
-			sign *= -1;
-		else if (*s >= '0' && *s <= '9')
-		{
-			result = result * 10 + (*s - '0');
+    /* Skip any non-digit characters at the beginning */
+    while (*s)
+    {
+        if (*s == '-')
+            sign *= -1;
+        else if (*s == '+')
+            ;
+        else if (*s >= '0' && *s <= '9')
+            break;
+        s++;
+    }
 
-			/* Clamp to INT_MIN / INT_MAX to prevent overflow */
-			if (sign == 1 && result > 2147483647)
-				return (2147483647);
-			if (sign == -1 && -result < -2147483648)
-				return (-2147483648);
-		}
-		else if (result > 0)
-			break; /* stop parsing once digits end */
-		s++;
-	}
+    /* Convert digits to integer */
+    while (*s && *s >= '0' && *s <= '9')
+    {
+        result = result * 10 + (*s - '0');
 
-	return ((int)(sign * result));
+        /* Clamp to INT_MAX / INT_MIN if overflow would occur */
+        if (sign == 1 && result > 2147483647)
+            return (2147483647);
+        if (sign == -1 && -result < -2147483648)
+            return (-2147483648);
+
+        s++;
+    }
+
+    return ((int)(sign * result));
 }

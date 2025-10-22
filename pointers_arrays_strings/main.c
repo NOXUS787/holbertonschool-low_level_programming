@@ -1,22 +1,6 @@
 #include "main.h"
 
 /**
- * _puts - prints a string using _putchar
- * @str: string to print
- */
-void _puts(char *str)
-{
-	int i = 0;
-
-	while (str[i] != '\0')
-	{
-		_putchar(str[i]);
-		i++;
-	}
-	_putchar('\n');
-}
-
-/**
  * _print_number - prints an integer using _putchar
  * @n: number to print
  */
@@ -39,27 +23,39 @@ void _print_number(int n)
 }
 
 /**
- * main - test the _strcmp function
+ * print_array - print an array of integers using _putchar
+ * @a: array
+ * @n: number of elements
+ */
+void print_array(int *a, int n)
+{
+	int i;
+
+	for (i = 0; i < n; i++)
+	{
+		if (i != 0)
+		{
+			_putchar(',');
+			_putchar(' ');
+		}
+		_print_number(a[i]);
+	}
+	_putchar('\n');
+}
+
+/**
+ * main - test reverse_array function
  *
  * Return: 0
  */
 int main(void)
 {
-	char s1[] = "Hello";
-	char s2[] = "World!";
-	int res;
+	int a[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 98, 1024, 1337};
+	int n = sizeof(a) / sizeof(int);
 
-	res = _strcmp(s1, s2);
-	_print_number(res);
-	_putchar('\n');
-
-	res = _strcmp(s2, s1);
-	_print_number(res);
-	_putchar('\n');
-
-	res = _strcmp(s1, s1);
-	_print_number(res);
-	_putchar('\n');
+	print_array(a, n);
+	reverse_array(a, n);
+	print_array(a, n);
 
 	return (0);
 }

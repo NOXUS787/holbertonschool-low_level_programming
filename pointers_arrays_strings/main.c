@@ -16,16 +16,16 @@ void _puts(char *str)
 }
 
 /**
- * main - test string_toupper function
+ * main - test cap_string function
  *
  * Return: 0
  */
 int main(void)
 {
-	char str[] = "Look up!\n";
+	char str[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\nhello world! hello-world 0123456hello world\thello world.hello world\n";
 	char *ptr;
 
-	ptr = string_toupper(str);
+	ptr = cap_string(str);
 	_puts(ptr);
 	_putchar('\n');
 	_puts(str);

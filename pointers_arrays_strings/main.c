@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h> /* only for local printf testing */
+
 
 /**
  * _puts - prints a string using _putchar
@@ -17,25 +19,41 @@ void _puts(char *str)
 }
 
 /**
- * main - test the _strncat function
+ * main - test the _strncpy function
  *
  * Return: 0
  */
 int main(void)
 {
-	char s1[98] = "Hello ";
-	char s2[] = "World!\n";
+	char s1[98];
 	char *ptr;
+	int i;
 
-	ptr = _strncat(s1, s2, 1);
+	for (i = 0; i < 98 - 1; i++)
+		s1[i] = '*';
+	s1[i] = '\0';
+
 	_puts(s1);
-	_puts(s2);
+
+	ptr = _strncpy(s1, "First, solve the problem. Then, write the code\n", 5);
+	_puts(s1);
 	_puts(ptr);
 
-	ptr = _strncat(s1, s2, 1024);
+	ptr = _strncpy(s1, "First, solve the problem. Then, write the code\n", 90);
 	_puts(s1);
-	_puts(s2);
 	_puts(ptr);
+
+	for (i = 0; i < 98; i++)
+	{
+		if (i % 10)
+			_putchar(' ');
+		if (!(i % 10) && i)
+			_putchar('\n');
+		printf("0x%02x", s1[i]);
+		if (i != 97)
+			_putchar(' ');
+	}
+	_putchar('\n');
 
 	return (0);
 }

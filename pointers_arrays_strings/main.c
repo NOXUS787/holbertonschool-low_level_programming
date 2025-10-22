@@ -16,19 +16,19 @@ void _puts(char *str)
 }
 
 /**
- * main - test cap_string function
+ * main - test leet function
  *
  * Return: 0
  */
 int main(void)
 {
-	char str[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\nhello world! hello-world 0123456hello world\thello world.hello world\n";
-	char *ptr;
+	char s[] = "Expect the best. Prepare for the worst. Capitalize on what comes.\n";
+	char *p;
 
-	ptr = cap_string(str);
-	_puts(ptr);
+	p = leet(s);
+	_puts(p);
 	_putchar('\n');
-	_puts(str);
+	_puts(s);
 	_putchar('\n');
 
 	return (0);

@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdio.h> /* only for local printf testing */
-
 
 /**
  * _puts - prints a string using _putchar
@@ -19,40 +17,48 @@ void _puts(char *str)
 }
 
 /**
- * main - test the _strncpy function
+ * _print_number - prints an integer using _putchar
+ * @n: number to print
+ */
+void _print_number(int n)
+{
+	unsigned int num;
+
+	if (n < 0)
+	{
+		_putchar('-');
+		num = -n;
+	}
+	else
+		num = n;
+
+	if (num / 10)
+		_print_number(num / 10);
+
+	_putchar((num % 10) + '0');
+}
+
+/**
+ * main - test the _strcmp function
  *
  * Return: 0
  */
 int main(void)
 {
-	char s1[98];
-	char *ptr;
-	int i;
+	char s1[] = "Hello";
+	char s2[] = "World!";
+	int res;
 
-	for (i = 0; i < 98 - 1; i++)
-		s1[i] = '*';
-	s1[i] = '\0';
+	res = _strcmp(s1, s2);
+	_print_number(res);
+	_putchar('\n');
 
-	_puts(s1);
+	res = _strcmp(s2, s1);
+	_print_number(res);
+	_putchar('\n');
 
-	ptr = _strncpy(s1, "First, solve the problem. Then, write the code\n", 5);
-	_puts(s1);
-	_puts(ptr);
-
-	ptr = _strncpy(s1, "First, solve the problem. Then, write the code\n", 90);
-	_puts(s1);
-	_puts(ptr);
-
-	for (i = 0; i < 98; i++)
-	{
-		if (i % 10)
-			_putchar(' ');
-		if (!(i % 10) && i)
-			_putchar('\n');
-		printf("0x%02x", s1[i]);
-		if (i != 97)
-			_putchar(' ');
-	}
+	res = _strcmp(s1, s1);
+	_print_number(res);
 	_putchar('\n');
 
 	return (0);

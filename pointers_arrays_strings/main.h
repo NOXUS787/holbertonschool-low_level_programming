@@ -12,6 +12,7 @@ char *cap_string(char *s);
 char *leet(char *s);
 char *_memset(char *s, char b, unsigned int n);
 char *_memcpy(char *dest, char *src, unsigned int n);
+char *_memset(char *s, char b, unsigned int n);
 
 /* Prototype for _putchar (provided by Holberton) */
 int _putchar(char c);

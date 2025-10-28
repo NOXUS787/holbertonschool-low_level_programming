@@ -10,6 +10,7 @@ void reverse_array(int *a, int n);
 char *string_toupper(char *s);
 char *cap_string(char *s);
 char *leet(char *s);
+char *_memset(char *s, char b, unsigned int n);
 
 /* Prototype for _putchar (provided by Holberton) */
 int _putchar(char c);

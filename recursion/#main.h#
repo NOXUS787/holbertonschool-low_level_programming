@@ -1,0 +1,10 @@
+#ifndef MAIN_H
+#define MAIN_H
+
+/* Prototype of _putchar provided by Holberton */
+int _putchar(char c);
+
+/* Prototype of _puts_recursion */
+void _puts_recursion(char *s);
+
+#endif /* MAIN_H *

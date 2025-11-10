@@ -1,21 +1,39 @@
 # 0x0A. malloc, free
 
-## Project Description
+## Resources
 
-This project focuses on dynamic memory allocation in C using `malloc` and `free`. You will learn how to allocate memory at runtime, manipulate it, and free it to avoid memory leaks.
+**Read or watch:**
+
+- [0x0a - malloc & free - quick overview.pdf](#)
+- [Dynamic memory allocation in C - malloc, calloc, realloc, free (stop at 6:50)](#)
+
+**man or help:**
+
+- `malloc`
+- `free`
+
+---
 
 ## Learning Objectives
 
-At the end of this project, you should be able to:
+At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-- Explain the difference between automatic (stack) and dynamic (heap) memory allocation.
-- Understand and use `malloc` and `free`.
-- Know when and why to use `malloc`.
-- Use Valgrind to detect memory leaks.
+### General
+
+- What is the difference between automatic and dynamic allocation
+- What is `malloc` and `free` and how to use them
+- Why and when to use `malloc`
+- How to use `valgrind` to check for memory leaks
+
+---
 
 ## Requirements
 
-- Allowed editors: `vi`, `vim`, `emacs`.
-- All files compiled on **Ubuntu 20.04 LTS** using:
-  ```bash
-  gcc -Wall -Werror -Wextra -pedantic -std=gnu89
+- Allowed editors: `vi`, `vim`, `emacs`
+- All files will be compiled on Ubuntu 20.04 LTS using `gcc` with the following flags:
+
+  ```
+  -Wall -Werror -Wextra -pedantic -std=gnu89
+  ```
+
+- All f

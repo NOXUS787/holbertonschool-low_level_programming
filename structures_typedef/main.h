@@ -1,8 +1,22 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef DOG_H
+#define DOG_H
 
 #include <stddef.h>
 
-char *create_array(unsigned int size, char c);
+/**
+ * struct dog - represents a dog
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: owner's name
+ */
+struct dog
+{
+    char *name;
+    float age;
+    char *owner;
+};
 
-#endif
+/* Function prototypes */
+void print_dog(struct dog *d);
+
+#endif /* DOG_H */

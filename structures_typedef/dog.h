@@ -16,7 +16,7 @@ struct dog
 	char *owner;
 };
 
-/* Function prototypes */
-void print_dog(struct dog *d);
+/* new type dog_t as an alias for struct dog */
+typedef struct dog dog_t;
 
 #endif /* DOG_H */

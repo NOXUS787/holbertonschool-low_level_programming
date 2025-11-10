@@ -1,13 +1,13 @@
-#ifndef DOG_H
-#define DOG_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stddef.h>
 
 /**
  * struct dog - represents a dog
- * @name: name of the dog
- * @age: age of the dog
- * @owner: owner's name
+ * @name: dog's name
+ * @age: dog's age
+ * @owner: dog's owner
  */
 struct dog
 {
@@ -19,4 +19,4 @@ struct dog
 /* Function prototypes */
 void print_dog(struct dog *d);
 
-#endif /* DOG_H */
+#endif /* MAIN_H */

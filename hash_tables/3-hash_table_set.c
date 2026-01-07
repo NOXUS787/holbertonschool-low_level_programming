@@ -3,12 +3,12 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - adds or updates an element in the hash table
- * @ht: hash table
- * @key: key (cannot be empty)
- * @value: value associated with key (must be duplicated)
+ * hash_table_set - Adds or updates an element in the hash table
+ * @ht: Pointer to the hash table
+ * @key: Key string (must not be empty)
+ * @value: Value associated with the key
  *
- * Return: 1 on success, 0 on failure
+ * Return: 1 if success, 0 otherwise
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
@@ -26,7 +26,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((const unsigned char *)key, ht->size);
 	node = ht->array[index];
 
-	/* Check if key already exists → update value */
 	while (node != NULL)
 	{
 		if (strcmp(node->key, key) == 0)
@@ -38,7 +37,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		node = node->next;
 	}
 
-	/* Key not found → create new node at beginning */
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 	{

@@ -7,7 +7,7 @@
  * struct hash_node_s - Node of a hash table
  * @key: The key, string
  * @value: The value corresponding to a key
- * @next: Pointer to the next node
+ * @next: Pointer to next node
  */
 typedef struct hash_node_s
 {
@@ -27,6 +27,10 @@ typedef struct hash_table_s
 	hash_node_t **array;
 } hash_table_t;
 
+/* Task 0 */
 hash_table_t *hash_table_create(unsigned long int size);
+
+/* Task 1 */
+unsigned long int hash_djb2(const unsigned char *str);
 
 #endif /* HASH_TABLES_H */
